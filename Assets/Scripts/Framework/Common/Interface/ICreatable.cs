@@ -1,4 +1,4 @@
-﻿namespace Common
+﻿namespace Framework.Common.Interface
 {
     public interface ICreatable
     {

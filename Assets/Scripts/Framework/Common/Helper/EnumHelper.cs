@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 using System.Text;
-namespace Common.Helper
+namespace Framework.Common.Helper
 {
     public static class EnumHelper
     {

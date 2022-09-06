@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Common
+namespace Framework.Common.Interface
 {
     public interface ISingleton : ICreatable
     {

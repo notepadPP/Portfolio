@@ -1,9 +1,9 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Common
+namespace Framework.Common
 {
-    public abstract class Singleton<T> : LifeCycle where T : ISingleton, new()
+    public abstract class Singleton<T> : LifeCycle where T : Interface.ISingleton, new()
     {
 
         private static readonly Lazy<T> _instance = new Lazy<T>(() => SingletonManager.CreateSingleton<T>());
