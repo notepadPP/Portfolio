@@ -10,7 +10,7 @@ namespace Framework.Common.Network.Web
         {
             this.callback = callback;
         }
-        public override void Invoke() => callback?.Invoke(ResponseCode, ResponseData);
+        public override void Invoke() => callback?.Invoke(responseCode, responseData);
         #region Make WebRequest
         public static NativeWebRequest MakeGetRequest(string url, string ContentType, Action<long, byte[]> callback, params (string, string)[] headers) => MakeRequest(url, ContentType, UnityWebRequest.kHttpVerbGET, null, callback, headers);
         public static NativeWebRequest MakePostRequest(string url, string ContentType, byte[] sendData, Action<long, byte[]> callback, params (string, string)[] headers) => MakeRequest(url, ContentType, UnityWebRequest.kHttpVerbPOST, sendData, callback, headers);

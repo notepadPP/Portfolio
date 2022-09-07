@@ -56,10 +56,10 @@ namespace Framework.Common.Network.Web
                 Request info = requests.Dequeue();
                 if (info == null) continue;
                 yield return info.SendAync();
-                if (info.IsError)
-                    Debugger.LogError($"RECV : E_FAIL {nameof(info.URL)}.{info.URL}, {nameof(info.ResponseCode)}.{info.ResponseCode}, {info.ErrorString}");
+                if (info.isError)
+                    Debugger.LogError($"RECV : E_FAIL {nameof(info.URL)}.{info.URL}, {nameof(info.responseCode)}.{info.responseCode}, {info.errorString}");
                 else
-                    Debugger.Log($"RECV : S_OK {nameof(info.URL)}.{info.URL}, {nameof(info.ResponseCode)}.{info.ResponseCode}");
+                    Debugger.Log($"RECV : S_OK {nameof(info.URL)}.{info.URL}, {nameof(info.responseCode)}.{info.responseCode}");
                 try
                 {
                     info.Invoke();

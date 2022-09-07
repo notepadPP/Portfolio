@@ -12,17 +12,18 @@ namespace Framework.Common.Network.Web
     {
         private UnityWebRequest request = null;
         protected Request(UnityWebRequest request) => this.request = request;
-        public bool IsSend { get; private set; } = false;
-        public long ResponseCode => request?.responseCode ?? 0;
-        public bool IsError => request.isNetworkError || request.isHttpError;
-        public string ErrorString => request.error;
-        public byte[] ResponseData => request.downloadHandler.data;
+        public bool isDone => request?.isDone ?? false;
+        public bool isSend { get; private set; } = false;
+        public long responseCode => request?.responseCode ?? 0;
+        public bool isError => request.isNetworkError || request.isHttpError;
+        public string errorString => request.error;
+        public byte[] responseData => request.downloadHandler.data;
         public string URL { get; }
 
         public void Send()
         {
             request?.SendWebRequest();
-            IsSend = true;
+            isSend = true;
         }
         public void Disponse()
         {
@@ -38,7 +39,7 @@ namespace Framework.Common.Network.Web
 #else
         public IEnumerator SendAync()
         {
-            IsSend = true;
+            isSend = true;
             yield return request.SendWebRequest();
         }
 #endif
