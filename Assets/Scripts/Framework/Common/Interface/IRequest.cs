@@ -1,4 +1,10 @@
-﻿using System.Collections;
+﻿#if UNITY_2012_2
+using System.Threading.Tasks;
+#else
+using System.Collections;
+#endif
+
+
 
 namespace Framework.Common.Network.Web.Interface
 {
@@ -12,6 +18,10 @@ namespace Framework.Common.Network.Web.Interface
         string URL { get; }
         void Send();
         void Disponse();
+#if UNITY_2012_2
+        async Task SendAync();
+#else
         IEnumerator SendAync();
+#endif
     }
 }

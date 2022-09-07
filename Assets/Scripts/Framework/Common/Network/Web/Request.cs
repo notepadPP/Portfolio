@@ -1,5 +1,10 @@
-﻿using System.Collections;
-using UnityEngine.Networking;
+﻿using UnityEngine.Networking;
+#if UNITY_2012_2
+using System.Threading.Tasks;
+#else
+using System.Collections;
+#endif
+
 
 namespace Framework.Common.Network.Web
 {
@@ -24,11 +29,21 @@ namespace Framework.Common.Network.Web
             request.Dispose();
             request = null;
         }
+#if UNITY_2012_2
+        async public Task SendAync()
+        {
+            IsSend = true;
+            yield return request.SendWebRequest();
+        }
+#else
         public IEnumerator SendAync()
         {
             IsSend = true;
             yield return request.SendWebRequest();
         }
+#endif
+
+
         public abstract void Invoke();
 
         #region Make UnityWebrequest
