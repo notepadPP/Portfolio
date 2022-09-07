@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Runtime.InteropServices;
-using System.Text;
+
 namespace Framework.Common.Helper
 {
-    public static class EnumHelper
+    public static partial class EnumHelper
     {
         [StructLayout(LayoutKind.Explicit)]
         struct EnumValue<T, E> where T : unmanaged where E : unmanaged, Enum
