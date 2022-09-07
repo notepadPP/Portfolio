@@ -38,7 +38,7 @@ namespace Framework.Common
             }
             catch (Exception e)
             {
-
+                Debugger.LogException(e);
             }
             return default;
         }
