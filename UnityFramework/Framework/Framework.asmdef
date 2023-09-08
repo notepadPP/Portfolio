@@ -1,0 +1,33 @@
+{
+    "name": "Framework",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9e24947de15b9834991c9d8411ea37cf",
+        "GUID:84651a3751eca9349aac36a66bba901b",
+        "GUID:250e096504da3aa4f851a4df12262950",
+        "GUID:6e5063adab271564ba0098a06a8cebda",
+        "GUID:478a2357cc57436488a56e564b08d223",
+        "GUID:65fdcbf45b193440193c487f6ecee4ce",
+        "GUID:46ee17e5fcc7f436f9df354a1efda6a4"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.yasirkula.nativegallery",
+            "expression": "",
+            "define": "NATIVE_GALLERY"
+        },
+        {
+            "name": "com.yasirkula.nativefilepicker",
+            "expression": "",
+            "define": "NATIVE_FILEPACKER"
+        }
+    ],
+    "noEngineReferences": false
+}
