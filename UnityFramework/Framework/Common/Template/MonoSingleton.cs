@@ -24,7 +24,7 @@ namespace Framework.Common.Template
                             DontDestroyOnLoadObj = new UnityEngine.GameObject("DontDestroyOnLoad").AddComponent<DontDestroyOnLoad>();
                         }
                         instance = new UnityEngine.GameObject(typeof(T).ToString()).AddComponent<T>();
-                        instance.transform.parent = DontDestroyOnLoadObj.transform;
+                        instance.transform.SetParent(DontDestroyOnLoadObj.transform);
                         instance.Initialize();
                     }
                     return instance;
