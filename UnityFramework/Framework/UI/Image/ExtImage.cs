@@ -200,9 +200,9 @@ public class ExtImage : MaskableGraphic, ICanvasRaycastFilter
             case ExtImageType.Tiled:
                 meshHelper = new TiledMesh(this);
                 break;
-            case ExtImageType.Filled:
-                meshHelper = null;
-                break;
+            // case ExtImageType.Filled:
+                // meshHelper = null;
+                // break;
         }
 
     }

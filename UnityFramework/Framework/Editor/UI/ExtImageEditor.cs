@@ -65,12 +65,12 @@ public class ExtImageEditor : UnityEditor.Editor
             case ExtImageType.Tiled:
                 EditorGUILayout.PropertyField(pixelsPerUnitMultiplierProp);
                 break;
-            case ExtImageType.Filled:
-                EditorGUILayout.PropertyField(fillDirectionProp);
-                EditorGUILayout.PropertyField(fillAmountProp);
-                
-                EditorGUILayout.PropertyField(preserveAspectProp);
-                break;
+            // case ExtImageType.Filled:
+                // EditorGUILayout.PropertyField(fillDirectionProp);
+                // EditorGUILayout.PropertyField(fillAmountProp);
+                // 
+                // EditorGUILayout.PropertyField(preserveAspectProp);
+                // break;
         }
         EditorGUI.indentLevel--;
 
