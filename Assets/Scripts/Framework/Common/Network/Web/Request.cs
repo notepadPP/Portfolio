@@ -15,7 +15,11 @@ namespace Framework.Common.Network.Web
         public bool isDone => request?.isDone ?? false;
         public bool isSend { get; private set; } = false;
         public long responseCode => request?.responseCode ?? 0;
+#if !UNITY_2020_2_OR_NEWER
         public bool isError => request.isNetworkError || request.isHttpError;
+#else
+        public bool isError => request.result != UnityWebRequest.Result.InProgress && request.result != UnityWebRequest.Result.Success;
+#endif
         public string errorString => request.error;
         public byte[] responseData => request.downloadHandler.data;
         public string URL { get; }

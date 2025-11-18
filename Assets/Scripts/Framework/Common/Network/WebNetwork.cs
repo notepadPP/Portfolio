@@ -1,13 +1,8 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-#if UNITY_2012_2
-using System.Threading.Tasks;
-#else
-using System.Collections;
-#endif
-
 using UnityEngine;
+
 
 namespace Framework.Common.Network.Web
 {
