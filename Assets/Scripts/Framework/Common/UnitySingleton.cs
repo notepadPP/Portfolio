@@ -14,7 +14,11 @@ namespace Framework.Common
                 {
                     if (_instance == null)
                     {
+#if !UNITY_2020_2_OR_NEWER
                         _instance = FindObjectOfType<SingletonManager>();
+#else
+                        _instance = FindFirstObjectByType<SingletonManager>();
+#endif
                         if (_instance == null)
                         {
                             GameObject go = new GameObject("SingletonManager");

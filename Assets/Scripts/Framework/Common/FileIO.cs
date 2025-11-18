@@ -68,12 +68,28 @@ namespace Framework.Common
                     var req = www.SendWebRequest();
                     while (!req.isDone) { }
                     Debugger.Log($"{req.isDone}, {path}");
+#if !UNITY_2020_2_OR_NEWER
                     if (www.isHttpError || www.isNetworkError)
                     {
                         Debugger.LogError($"{path} {www.isHttpError}, {www.isNetworkError}, {www.error}");
                         data = null;
                         return false;
                     }
+#else
+                    switch (www.result)
+                    {
+                        case UnityWebRequest.Result.InProgress:
+                            break;
+                        case UnityWebRequest.Result.Success:
+                            break;
+                        case UnityWebRequest.Result.ConnectionError:
+                        case UnityWebRequest.Result.ProtocolError:
+                        case UnityWebRequest.Result.DataProcessingError:
+                            Debugger.LogError($"{path} {www.result}, {www.error}");
+                            data = null;
+                            return false;
+                    }
+#endif
                     data = www.downloadHandler.data;
                 }
                 if (data == null || data.Length < 1) { Debugger.LogError(nameof(data)); return false; }
